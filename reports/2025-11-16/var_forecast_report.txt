@@ -2,42 +2,88 @@
 
 
 <h3 id="forecast">📈 통화량 예측 결과</h3>
-- **예측 변동률:** 0.62% (비조건부 예측치)
-- **95% 신뢰 구간:** [0.62% ~ 3.23%]
-
-**해석:** 모형은 통화량이 다음 분기에 0.62% 변동할 것으로 예상하며, 95% 확률로 변동 폭은 0.62%에서 3.23% 사이에 위치합니다.
+<table class="table table-bordered table-striped w-100 mx-auto" style="max-width: 800px;">
+    <thead>
+        <tr>
+            <th style="text-align: center;">Metric</th>
+            <th style="text-align: center;">Value</th>
+            <th style="text-align: center;">95% CI (Lower)</th>
+            <th style="text-align: center;">95% CI (Upper)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">예측 변동률</td>
+            <td style="text-align: center;">**0.62%**</td>
+            <td style="text-align: center;">0.62%</td>
+            <td style="text-align: center;">3.23%</td>
+        </tr>
+    </tbody>
+</table>
+<p style="text-align: center;">
+**해석:** 모형은 통화량이 다음 분기에 **0.62%** 변동할 것으로 예상하며, 95% 확률로 변동 폭은 0.62%에서 3.23% 사이에 위치합니다.
+</p>
 
 
 
 <h3 id="fevd">📊 분산 분해 (FEVD) 요약 (1분기 후)</h3>
 ⚠️ 경고: FEVD 데이터 구조가 비정상적입니다. 신뢰도가 낮습니다.
-(주요 변수가 $M_t$의 예측 오차 분산에 기여하는 정도)
-- $M_t$ 변동에 가장 큰 영향을 미치는 요인은 **정책 금리($r_t$)**와 **실질 GDP($Y_t$)** 등인 것으로 나타났습니다.
-- **주요 변수별 기여도 (FEVD Top 3):**
-- **Y_t**: 100.00%
-- **pi_t**: 0.00%
-- **PIE_t**: 0.00%
+<p class="text-muted">(주요 변수가 $M_t$의 예측 오차 분산에 기여하는 정도)</p>
+<table class="table table-bordered table-striped w-100 mx-auto" style="max-width: 800px;">
+    <thead>
+        <tr>
+            <th style="text-align: center;">Rank</th>
+            <th style="text-align: center;">Variable</th>
+            <th style="text-align: center;">Contribution to $M_t$ Variance (1Q)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td style="text-align: center;">1</td><td style="text-align: center;">**Y_t**</td><td style="text-align: center;">100.00%</td></tr>
+        <tr><td style="text-align: center;">2</td><td style="text-align: center;">**pi_t**</td><td style="text-align: center;">0.00%</td></tr>
+        <tr><td style="text-align: center;">3</td><td style="text-align: center;">**PIE_t**</td><td style="text-align: center;">0.00%</td></tr>
+    </tbody>
+</table>
 
 
 
 <h3 id="reliability">🛡️ 모형 신뢰도 지표 및 예측 성능 분석</h3>
-- **적용된 차수:** 1차 (BIC 기준 자동 선택)
-- **$M_t$ 방정식 설명력 ($\mathbf{R^2}$):** 0.3261
-- **통화량 오차의 크기 ($\mathbf{RMSE}$):** **1.2368 %p** (분기 대비)
+<ul style="list-style-type: none; padding: 0;">
+    <li style="text-align: center;">**적용된 차수:** 1차 (BIC 기준 자동 선택)</li>
+    <li style="text-align: center;">**$M_t$ 방정식 설명력 ($\mathbf{R^2}$):** 0.3261</li>
+    <li style="text-align: center;">**통화량 오차의 크기 ($\mathbf{RMSE}$):** **1.2368 %p** (분기 대비)</li>
+</ul>
 
 #### 📝 예측 성능 지표 해석
 
-| 지표 | 역할 | 이 모형의 수치 해석 |
-| :---: | :---: | :--- |
-| $\mathbf{R^2}$ | **과거 설명력** | 32.61%의 통화량 변동을 모형이 설명합니다. BIC 적용으로 과적합을 피하고 **균형 잡힌 설명력(32.61%)**을 확보했습니다. |
-| **RMSE** | **예측 오차 크기** | $M_t$ 예측 시 **평균적인 오차 크기**는 약 **1.2368 %p**입니다. 이 수치가 낮을수록 예측 정확도가 높습니다. |
-
+<table class="table table-bordered table-striped w-100 mx-auto" style="max-width: 100%;">
+    <thead>
+        <tr>
+            <th style="text-align: center;">지표</th>
+            <th style="text-align: center;">역할</th>
+            <th style="text-align: center;">이 모형의 수치 해석</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">$\mathbf{R^2}$</td>
+            <td style="text-align: center;">**과거 설명력**</td>
+            <td style="text-align: center;">32.61%의 통화량 변동을 모형이 설명합니다. BIC 적용으로 과적합을 피하고 **균형 잡힌 설명력(32.61%)**을 확보했습니다.</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">**RMSE**</td>
+            <td style="text-align: center;">**예측 오차 크기**</td>
+            <td style="text-align: center;">$M_t$ 예측 시 **평균적인 오차 크기**는 약 **1.2368 %p**입니다. 이 수치가 낮을수록 예측 정확도가 높습니다.</td>
+        </tr>
+    </tbody>
+</table>
 
 
 
 <h3 id="overview">📝 예측 개요</h3>
-- **분석 대상 변수:** 통화량 변화율($M_t$)은 FRED 기준 **M2 Money Stock (M2SL)**의 로그 차분($\mathbf{log\_diff}$) 값입니다. 이는 **통화량의 분기 대비 백분율 변화**를 나타냅니다.
-- **예측 시점:** 2025년 06월 데이터 기준
-- **최근 관측된 $M_t$ 변화율:** **1.30%** (분기 대비)
-- **예측 기간:** 다음 분기 (1분기 후)
-- **예측 대상:** 통화량 변화율($M_t$, 분기 대비 % 변동)
+<ul style="list-style-type: none; padding: 0;">
+    <li style="text-align: center;">**분석 대상 변수:** 통화량 변화율($M_t$)은 FRED 기준 **M2 Money Stock (M2SL)**의 로그 차분($\mathbf{log\_diff}$) 값입니다. 이는 **통화량의 분기 대비 백분율 변화**를 나타냅니다.</li>
+    <li style="text-align: center;">**예측 시점:** 2025년 06월 데이터 기준</li>
+    <li style="text-align: center;">**최근 관측된 $M_t$ 변화율:** **1.30%** (분기 대비)</li>
+    <li style="text-align: center;">**예측 기간:** 다음 분기 (1분기 후)</li>
+    <li style="text-align: center;">**예측 대상:** 통화량 변화율($M_t$, 분기 대비 % 변동)</li>
+</ul>
