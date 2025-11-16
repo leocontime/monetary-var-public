@@ -2,29 +2,24 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>통화량 추정 VAR 모델 결과</title>
+    <title>Monetary VAR Model Analysis Results</title>
+    <style>
+        body { font-family: "Nanum Gothic", Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        img { max-width: 100%; height: auto; display: block; margin: 20px 0; border: 1px solid #ccc; }
+        pre { background: #f4f4f4; padding: 15px; border: 1px solid #ddd; overflow-x: auto; }
+    </style>
 </head>
 <body>
-    <h1>💵 정부, 기업, 가계 이질성 기반 통화량 VAR 분석</h1>
-    <p>이 페이지는 GitHub Actions에 의해 정기적으로 자동으로 업데이트됩니다. 분석 결과는 FRED 최신 데이터를 반영합니다.</p>
+    <h1>📊 통화 VAR 모형 분석 결과</h1>
+    <p>최근 데이터로 업데이트된 통화 VAR 모형의 충격반응함수(IRF) 분석 결과입니다.</p>
     
-    <h2>1. VAR 모형 충격반응함수 (IRF)</h2>
-    <p>통화량($M_t$)에 대한 각 경제 주체 충격의 동태적 반응입니다.</p>
-    <img src="var_irf_results.png" alt="VAR 모형 충격반응함수 그래프" style="max-width: 90%;">
-
-    <h2>2. 모형 요약 및 통계</h2>
-    <pre id="summary-content"></pre>
+    <h2>충격반응함수 (IRF)</h2>
+    <img src="var_irf_results.png" alt="VAR Model Impulse Response Functions">
     
-    <script>
-        // var_model_summary.txt 파일의 내용을 읽어와 표시
-        fetch('var_model_summary.txt')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('summary-content').textContent = data;
-            })
-            .catch(error => {
-                document.getElementById('summary-content').textContent = '모형 요약 파일을 불러오는 데 실패했습니다.';
-            });
-    </script>
+    <h2>모형 요약 (Summary)</h2>
+    <pre>$(cat dist/var_model_summary.txt)</pre>
+    
+    <p>데이터 업데이트 일자: $(date "+%Y-%m-%d %H:%M:%S")</p>
 </body>
 </html>
