@@ -10,79 +10,26 @@
         body { font-family: "Nanum Gothic", Arial, sans-serif; line-height: 1.6; background-color: #f8f9fa; }
         /* 좌측 메뉴바: 데스크톱에서만 보이고, 모바일에서는 숨김 */
         .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 20px;
-            overflow-x: hidden;
-            overflow-y: auto; 
-            border-right: 1px solid #dee2e6;
-            background-color: #f4f4f4;
-            width: 250px; /* 데스크톱 고정 폭 */
+            position: fixed; top: 0; bottom: 0; left: 0; z-index: 1000; padding: 20px;
+            overflow-x: hidden; overflow-y: auto; border-right: 1px solid #dee2e6;
+            background-color: #f4f4f4; width: 250px;
         }
-        /* 본문 영역: 데스크톱에서만 좌측 마진 적용 */
         .main-content { padding: 20px; }
-        @media (min-width: 768px) { 
-            .main-content { margin-left: 250px; }
-        }
-        /* 표 스타일: 가운데 정렬 및 스크롤 */
-        pre { background: #fff; padding: 15px; border: 1px solid #dee2e6; overflow-x: auto; font-size: 0.8rem; line-height: 1.2; text-align: center; }
-        /* 제목 스타일 */
+        @media (min-width: 768px) { .main-content { margin-left: 250px; } }
+        /* **모형 요약은 pre 태그를 사용**하여 내용의 서식을 보존합니다. */
+        pre { background: #fff; padding: 15px; border: 1px solid #dee2e6; overflow-x: auto; font-size: 0.8rem; line-height: 1.2; text-align: left; }
         h1, h2, h3 { color: #004085; padding-bottom: 5px; margin-top: 20px; }
-        /* 이미지 (그래프) 반응형 & 페이지 폭에 맞춤 */
         img { max-width: 100%; height: auto; display: block; margin: 20px 0; border: 1px solid #ccc; }
-        
-        /* 모바일 상단 바 여백 확보 */
-        @media (max-width: 767.98px) {
-            .main-content { padding-top: 60px; padding-bottom: 60px; }
-        }
+        @media (max-width: 767.98px) { .main-content { padding-top: 60px; padding-bottom: 60px; } }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top d-md-none">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../../">💰 VAR 리포트</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mobileNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="../../">📊 보고서 아카이브</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../data_vars.html">변수 정의 및 설명</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top d-md-none">...</nav>
     <div class="d-flex">
-        <nav class="sidebar col-md-3 col-lg-2 d-none d-md-block">
-            <h5 class="my-3 text-muted">주요 분석 메뉴</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="../../">
-                        📊 보고서 아카이브
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../data_vars.html">
-                        변수 정의 및 설명
-                    </a>
-                </li>
-            </ul>
-            <h5 class="my-3 text-muted">이 보고서</h5>
-             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="#forecast">🎯 예측 보고서</a></li>
-                <li class="nav-item"><a class="nav-link" href="#irf">📈 충격반응함수</a></li>
-                <li class="nav-item"><a class="nav-link" href="#summary">📑 모형 요약</a></li>
-            </ul>
-        </nav>
+        <nav class="sidebar col-md-3 col-lg-2 d-none d-md-block">...</nav>
 
         <main class="main-content col-md-9 col-lg-10 ml-sm-auto px-md-4">
-            <div class="d-none d-md-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2"><a href="../../" style="text-decoration: none; color: #333;">💰 통화 VAR 분석 리포트</a></h1>
-            </div>
+            <div class="d-none d-md-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">...</div>
 
             <h2 id="report_title">2025-11-16 분석 결과</h2>
             <p class="text-muted">FRED 최신 데이터를 반영한 VAR 모형의 분석 및 다음 분기 예측 결과입니다.</p>
@@ -119,7 +66,7 @@
 Model:                         VAR
 Method:                        OLS
 Date:           Sun, 16, Nov, 2025
-Time:                     20:15:32
+Time:                     20:24:42
 --------------------------------------------------------------------
 No. of Equations:         9.00000    BIC:                    38.4830
 Nobs:                     89.0000    HQIC:                   36.9807
@@ -292,13 +239,7 @@ M_t          -0.299543 -0.500177  0.690789  0.359171 -0.431420   -0.367459 -0.04
         </main>
     </div>
     
-    <nav class="navbar navbar-expand navbar-light bg-light fixed-bottom d-md-none border-top">
-        <ul class="navbar-nav nav-fill w-100">
-            <li class="nav-item"><a class="nav-link" href="#forecast">🎯 예측</a></li>
-            <li class="nav-item"><a class="nav-link" href="#irf">📈 IRF</a></li>
-            <li class="nav-item"><a class="nav-link" href="#summary">📑 요약</a></li>
-        </ul>
-    </nav>
+    <nav class="navbar navbar-expand navbar-light bg-light fixed-bottom d-md-none border-top">...</nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
