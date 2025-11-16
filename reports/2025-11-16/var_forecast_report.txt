@@ -14,14 +14,14 @@
     <tbody>
         <tr>
             <td style="text-align: center;">예측 변동률</td>
-            <td style="text-align: center;">**0.62%**</td>
-            <td style="text-align: center;">0.62%</td>
-            <td style="text-align: center;">3.23%</td>
+            <td style="text-align: center;">**0.81%**</td>
+            <td style="text-align: center;">0.81%</td>
+            <td style="text-align: center;">3.41%</td>
         </tr>
     </tbody>
 </table>
 <p style="text-align: center;">
-**해석:** 모형은 통화량이 다음 분기에 **0.62%** 변동할 것으로 예상하며, 95% 확률로 변동 폭은 0.62%에서 3.23% 사이에 위치합니다.
+**해석:** 모형은 통화량이 다음 분기에 **0.81%** 변동할 것으로 예상하며, 95% 확률로 변동 폭은 0.81%에서 3.41% 사이에 위치합니다.
 </p>
 
 
@@ -49,8 +49,8 @@
 <h3 id="reliability">🛡️ 모형 신뢰도 지표 및 예측 성능 분석</h3>
 <ul style="list-style-type: none; padding: 0;">
     <li style="text-align: center;">**적용된 차수:** 1차 (BIC 기준 자동 선택)</li>
-    <li style="text-align: center;">**$M_t$ 방정식 설명력 ($\mathbf{R^2}$):** 0.3261</li>
-    <li style="text-align: center;">**통화량 오차의 크기 ($\mathbf{RMSE}$):** **1.2368 %p** (분기 대비)</li>
+    <li style="text-align: center;">**$M_t$ 방정식 설명력 ($\mathbf{R^2}$):** 0.3269</li>
+    <li style="text-align: center;">**통화량 오차의 크기 ($\mathbf{RMSE}$):** **1.2360 %p** (분기 대비)</li>
 </ul>
 
 #### 📝 예측 성능 지표 해석
@@ -67,12 +67,12 @@
         <tr>
             <td style="text-align: center;">$\mathbf{R^2}$</td>
             <td style="text-align: center;">**과거 설명력**</td>
-            <td style="text-align: center;">32.61%의 통화량 변동을 모형이 설명합니다. BIC 적용으로 과적합을 피하고 **균형 잡힌 설명력(32.61%)**을 확보했습니다.</td>
+            <td style="text-align: center;">32.69%의 통화량 변동을 모형이 설명합니다. BIC 적용으로 과적합을 피하고 **균형 잡힌 설명력(32.69%)**을 확보했습니다.</td>
         </tr>
         <tr>
             <td style="text-align: center;">**RMSE**</td>
             <td style="text-align: center;">**예측 오차 크기**</td>
-            <td style="text-align: center;">$M_t$ 예측 시 **평균적인 오차 크기**는 약 **1.2368 %p**입니다. 이 수치가 낮을수록 예측 정확도가 높습니다.</td>
+            <td style="text-align: center;">$M_t$ 예측 시 **평균적인 오차 크기**는 약 **1.2360 %p**입니다. 이 수치가 낮을수록 예측 정확도가 높습니다.</td>
         </tr>
     </tbody>
 </table>
