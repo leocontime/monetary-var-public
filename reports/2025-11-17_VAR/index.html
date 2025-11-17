@@ -17,12 +17,12 @@
 
 <h3 id="reliability">🛡️ 모형 신뢰도 지표 및 예측 성능 분석</h3><ul style="list-style-type: none; padding: 0; text-align: center;"><li>**모델 유형:** Cholesky 분해 VAR</li><li>**적용된 차수:** 1차</li><li>**$M_t$ 방정식 설명력 ($\mathbf{R^2}$):** 0.2442</li></ul>
 
-<h3 id="overview">📝 예측 개요</h3><ul style="list-style-type: none; padding: 0; text-align: left;"><li>**분석 기간 시작:** 2008-01-01</li><li>**모델 유형:** **Cholesky 분해 VAR** (비구조적)</li><li>**VAR 차수 고정:** 1차 (수치 안정화 목적)</li><li>**Cholesky 순서:** $\mathbf{M_t 	o Y_t 	o \pi_t 	o r_t}$ (충격 해석 순서)</li><li>**모든 변수 변환:** $\mathbf{log\_diff}$ (변동률)</li><li>**변수:** $M_t$ (통화량 로그 차분)</li><li>**최근 관측된 $M_t$ 변화율:** **1.23%**</li></ul></pre><h3 id="irf">📈 충격반응함수 (IRF)</h3><p class="text-center-p">Cholesky 충격에 대한 M_t (통화량)의 동태적 반응입니다. (4개 변수 충격)</p><img src="var_irf_results.png" alt="VAR Model Impulse Response Functions"><h3 id="summary">📑 모형 요약 및 통계</h3><pre>  Summary of Regression Results   
+<h3 id="overview">📝 예측 개요</h3><ul style="list-style-type: none; padding: 0; text-align: left;"><li>**분석 기간 시작:** 2008-01-01</li><li>**모델 유형:** **Cholesky 분해 VAR** (비구조적)</li><li>**VAR 차수 선택:** 1차 ($\mathbf{BIC}$ 기준 자동 선택)</li><li>**Cholesky 순서:** $\mathbf{M_t 	o Y_t 	o \pi_t 	o r_t}$ (충격 해석 순서)</li><li>**모든 변수 변환:** $\mathbf{log\_diff}$ (변동률)</li><li>**변수:** $M_t$ (통화량 로그 차분)</li><li>**최근 관측된 $M_t$ 변화율:** **1.23%**</li></ul></pre><h3 id="irf">📈 충격반응함수 (IRF)</h3><p class="text-center-p">Cholesky 충격에 대한 M_t (통화량)의 동태적 반응입니다. (4개 변수 충격)</p><img src="var_irf_results.png" alt="VAR Model Impulse Response Functions"><h3 id="summary">📑 모형 요약 및 통계</h3><pre>  Summary of Regression Results   
 ==================================
 Model:                         VAR
 Method:                        OLS
 Date:           Mon, 17, Nov, 2025
-Time:                     21:33:53
+Time:                     21:40:29
 --------------------------------------------------------------------
 No. of Equations:         4.00000    BIC:                    6.98293
 Nobs:                     69.0000    HQIC:                   6.59227
