@@ -1,0 +1,2 @@
+﻿report_date,base_date,optimal_lag,last_m_t_obs,forecast_m_t_change,r_squared,rmse_mt,model_type
+2025-11-17_VAR,2025-09-30,1,1.2274000060500612,1.3398725579956712,0.24422728788740933,1.4643889768690124,VAR_4_vars_Cholesky_2008_Lag1_AllLogDiff
