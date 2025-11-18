@@ -1,0 +1,5 @@
+pandas
+numpy
+matplotlib
+statsmodels==0.14.5
+requests  # 👈 이 줄을 추가해야 합니다.

@@ -3,81 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Monetary VAR Reports Archive</title>
+    <title>💵 통화량 VAR 분석 대시보드</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        body { font-family: "Nanum Gothic", Arial, sans-serif; line-height: 1.6; background-color: #f8f9fa; }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 20px;
-            overflow-x: hidden;
-            overflow-y: auto; 
-            border-right: 1px solid #dee2e6;
-            background-color: #f4f4f4;
-            width: 250px;
-        }
-        .main-content { padding: 20px; }
-        @media (min-width: 768px) { 
-            .main-content { margin-left: 250px; }
-        }
-        h1, h2 { color: #004085; border-bottom: 2px solid #cce5ff; padding-bottom: 5px; margin-top: 30px; }
-         @media (max-width: 767.98px) {
-             .main-content { padding-top: 60px; } 
-         }
+        body { padding-top: 56px; }
+        .table-responsive { overflow-x: auto; }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top d-md-none">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">💰 VAR 리포트</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">💵 VAR 분석 대시보드</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="mobileNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">📊 보고서 아카이브</a></li>
-                    <li class="nav-item"><a class="nav-link" href="data_vars.html">변수 정의 및 설명</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#historical">과거 예측 요약</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#actuals">최근 실제 데이터</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#definitions">변수 정의</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="d-flex">
-        <nav class="sidebar col-md-3 col-lg-2 d-none d-md-block">
-            <h5 class="my-3 text-muted">주요 분석 메뉴</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
-                        📊 보고서 아카이브
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="data_vars.html">
-                        변수 정의 및 설명
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="container mt-5 pt-3">
+        <h1 class="display-5 mb-4">💰 통화량 VAR 모델 예측 결과 대시보드</h1>
+        <p class="lead">FRED 데이터를 기반으로 자동 생성되는 통화량($M_t$) 예측 분석 요약입니다.</p>
 
-        <main class="main-content col-md-9 col-lg-10 ml-sm-auto px-md-4">
-            <div class="d-none d-md-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2"><a href="index.html" style="text-decoration: none; color: #333;">💰 통화 VAR 분석 리포트</a></h1>
-            </div>
-            
-            <h2 class="mb-4">📊 분석 보고서 목록</h2>
-            <p class="text-muted">GitHub Actions에 의해 자동 생성된 분기별 VAR 모형 예측 보고서 목록입니다. (총 0 건)</p>
-            <ul class="list-group">
-                <li class="list-group-item"><a href="reports/2025-11-17_VAR/index.html">[2025-11-17_VAR] 통화량 VAR 예측 보고서 (최신순)</a></li>
-            </ul>
-            
-            <footer class="mt-5 pt-3 border-top text-center text-muted">
-                <p>최근 아카이브 업데이트: 2025-11-17 22:12:10</p>
-            </footer>
-        </main>
+        <h2 id="historical" class="mt-5">📊 과거 예측 요약 및 상세 보고서 링크</h2>
+        <div class="table-responsive">${SUMMARY_HTML}</div>
+
+        <h2 id="actuals" class="mt-5">📈 최근 20개 분기 통화량($M_t$) 실제 변동률</h2>
+        <div class="table-responsive" style="max-width: 400px; margin: 0 auto;">
+            ${ACTUAL_DATA_HTML}
+        </div>
+
+        <h2 id="definitions" class="mt-5">📑 변수 정의 및 설명</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped w-100">
+                <thead>
+                    <tr>
+                        <th>변수명</th><th>FRED 코드</th><th>설명</th><th>변환 방식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>$M_t$</td><td>M2SL</td><td>통화량 (M2)</td><td>로그 차분</td></tr>
+                    <tr><td>$Y_t$</td><td>GDPC1</td><td>실질 GDP</td><td>로그 차분</td></tr>
+                    <tr><td>$\pi_t$</td><td>CPIAUCSL</td><td>물가 (CPI)</td><td>로그 차분</td></tr>
+                    <tr><td>$r_t$</td><td>FEDFUNDS</td><td>금리</td><td>로그 차분</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="mt-5 pt-3 border-top text-center text-muted">
+            <p>최근 아카이브 업데이트: $(date "+%Y-%m-%d %H:%M:%S")</p>
+        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
